@@ -1,10 +1,7 @@
 package com.example.jeremiasbackendt1.service;
-
 import com.example.jeremiasbackendt1.dto.Auto;
-
 import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Service;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -20,7 +17,6 @@ public class AutoServiceImpl implements AutoService {
     public AutoServiceImpl(ResourceLoader resourceLoader) {
         this.resourceLoader = resourceLoader;
     }
-
     @Override
     public Optional<Auto> buscarPorPlaca(String placa) {
         List<Auto> autos = new ArrayList<>();
@@ -47,8 +43,6 @@ public class AutoServiceImpl implements AutoService {
                 .filter(auto -> auto.placa().equalsIgnoreCase(placa))
                 .findFirst();
     }
-
-
 
 
     }
