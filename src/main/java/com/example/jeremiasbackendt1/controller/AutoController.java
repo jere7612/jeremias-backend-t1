@@ -18,7 +18,7 @@ public class AutoController {
     public AutoController(AutoService autoService) {
         this.autoService = autoService;
     }
-    @GetMapping("/placa/{placa}")
+    @GetMapping("/buscar/{placa}")
     public ResponseEntity<Auto> buscarPorPlaca(@PathVariable String placa) {
         return autoService.buscarPorPlaca(placa)
                 .map(auto -> ResponseEntity.ok(auto))
